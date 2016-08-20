@@ -6,6 +6,7 @@ import reducer from './reducer/reducer';
 import AddTodo from './containers/add-todo';
 import TodoList from './containers/todo-list';
 import middleware from './middleware/middleware';
+import Footer from './containers/footer';
 
 const createStoreMiddleware = applyMiddleware(middleware)(createStore);
 const store = createStoreMiddleware(reducer);
@@ -18,6 +19,7 @@ class App extends Component {
         return <div>
             <AddTodo/>
             <TodoList/>
+            <Footer/>
         </div>
     }
 }

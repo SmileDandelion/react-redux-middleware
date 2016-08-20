@@ -9,8 +9,12 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps= (dispatch)=>{
     return {
-        onDelete:(index)=>{
-            dispatch({type:"DELETE",index});
+        onDelete:(id)=>{
+            dispatch({type:"DELETE",id});
+        },
+        onToggle:(id)=> {
+            console.log(id)
+            dispatch({type: 'TOGGLE', id});
         }
     }
 }
