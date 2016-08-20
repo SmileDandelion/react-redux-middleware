@@ -23,6 +23,15 @@ app.post('/todo',(req,res)=>{
     todos.push({text:req.body.text,isDone:false});
     res.send(todos);
 });
+app.delete('/todo',(req,res)=>{
+    todos.splice(req.body.index,1);
+    res.send(todos);
+});
+
+app.get('/todos',(req,res)=>{
+    res.send(todos);
+});
+
 var server = app.listen(3000, function () {
     var port = server.address().port;
     console.log('listening at port %s', port);
